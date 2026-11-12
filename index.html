@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>5 Vitamins for Healthy-Looking Skin: A Food-First Guide</title>
+  <meta name="description" content="Vitamins C, E, A, D and B3 for healthy-looking skin: what each does, foods that provide it, adult daily amounts and upper limits from NIH, and safety notes.">
+  <meta property="og:title" content="5 Vitamins for Healthy-Looking Skin: A Food-First Guide">
+  <meta property="og:description" content="Build a plate that covers vitamins C, E, A, D and B3, and check NIH daily amounts and upper limits before adding a supplement.">
+  <meta property="og:type" content="article">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <span class="site-name">Skin Vitamins, Food First</span>
+      <nav aria-label="Page sections">
+        <ul>
+          <li><a href="#plate">Plate builder</a></li>
+          <li><a href="#vitamins">The five vitamins</a></li>
+          <li><a href="#amounts">Daily amounts</a></li>
+          <li><a href="#safety">Safety</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <h1 id="hero-title">Five vitamins your skin relies on, and where to find them on your plate</h1>
+        <p class="lede">Vitamins C, E, A, D and B3 each play a part in how skin is built and maintained. Food is the place to start; supplements can fill gaps. This guide shows which everyday foods provide each one, how much adults need, and where the safe upper limits sit.</p>
+        <ul class="vit-strip" aria-label="The five vitamins covered">
+          <li class="v-c">C</li><li class="v-e">E</li><li class="v-a">A</li><li class="v-d">D</li><li class="v-b3">B3</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Plate builder -->
+    <section id="plate" class="section plate-section" aria-labelledby="plate-title">
+      <div class="wrap plate-grid">
+        <div>
+          <h2 id="plate-title">Build a plate</h2>
+          <p class="intro">Tap foods to add them. The plate lights up each vitamin your choices provide. A few varied foods can cover all five.</p>
+          <div class="foods" role="group" aria-label="Foods" id="foods"></div>
+          <button type="button" class="reset" id="reset">Clear plate</button>
+        </div>
+        <div class="plate-wrap">
+          <div class="plate" aria-hidden="true">
+            <span class="seg seg-c" data-v="c">C</span>
+            <span class="seg seg-e" data-v="e">E</span>
+            <span class="seg seg-a" data-v="a">A</span>
+            <span class="seg seg-d" data-v="d">D</span>
+            <span class="seg seg-b3" data-v="b3">B3</span>
+          </div>
+          <p class="plate-status" id="plate-status" aria-live="polite">Your plate is empty.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vitamins -->
+    <section id="vitamins" class="section" aria-labelledby="vit-title">
+      <div class="wrap">
+        <h2 id="vit-title">The five vitamins</h2>
+        <div class="vit-list">
+          <article class="vit v-c-border" aria-labelledby="vc">
+            <h3 id="vc"><span class="dot v-c"></span>Vitamin C</h3>
+            <p>The body needs vitamin C to make collagen, a structural protein in skin. It also works as an antioxidant. It is water-soluble, so the body doesn’t store much of it.</p>
+            <p class="foods-line"><strong>Food sources:</strong> citrus fruits, red bell peppers, kiwi, strawberries, broccoli, tomatoes.</p>
+          </article>
+          <article class="vit v-e-border" aria-labelledby="ve">
+            <h3 id="ve"><span class="dot v-e"></span>Vitamin E</h3>
+            <p>A fat-soluble antioxidant that helps protect cells from damage by free radicals. It is often paired with vitamin C in skin care products.</p>
+            <p class="foods-line"><strong>Food sources:</strong> almonds, sunflower seeds, peanuts, spinach, vegetable oils such as sunflower and safflower oil.</p>
+          </article>
+          <article class="vit v-a-border" aria-labelledby="va">
+            <h3 id="va"><span class="dot v-a"></span>Vitamin A</h3>
+            <p>Needed for normal growth and development of cells throughout the body. Retinoids, compounds related to vitamin A, are widely used in topical skin care, usually at night and introduced slowly.</p>
+            <p class="foods-line"><strong>Food sources:</strong> eggs, dairy and fish (preformed vitamin A); carrots, sweet potatoes, spinach and other orange or leafy vegetables (beta-carotene, which the body converts).</p>
+          </article>
+          <article class="vit v-d-border" aria-labelledby="vd">
+            <h3 id="vd"><span class="dot v-d"></span>Vitamin D</h3>
+            <p>The skin makes vitamin D when exposed to sunlight, but sun exposure also raises skin cancer risk, so sun protection still matters. Food and supplements are other ways to get it.</p>
+            <p class="foods-line"><strong>Food sources:</strong> fatty fish such as salmon and tuna, egg yolks, UV-exposed mushrooms, fortified milk and cereals.</p>
+          </article>
+          <article class="vit v-b3-border" aria-labelledby="vb3">
+            <h3 id="vb3"><span class="dot v-b3"></span>Vitamin B3 (niacin)</h3>
+            <p>A B vitamin the body uses to turn food into energy and keep cells working. Niacinamide, one form of B3, is a common ingredient in topical skin care.</p>
+            <p class="foods-line"><strong>Food sources:</strong> chicken, turkey, tuna, salmon, peanuts, brown rice, fortified cereals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amounts -->
+    <section id="amounts" class="section amounts" aria-labelledby="amounts-title">
+      <div class="wrap">
+        <h2 id="amounts-title">How much adults need</h2>
+        <p class="intro">Recommended amounts and upper limits for adults 19 and older, from the NIH Office of Dietary Supplements. The upper limit is the most a person can take daily without likely harm; for some vitamins it applies only to supplements.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Vitamin</th><th scope="col">Recommended daily (men / women)</th><th scope="col">Upper limit</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Vitamin C</th><td>90 mg / 75 mg</td><td>2,000 mg</td></tr>
+              <tr><th scope="row">Vitamin E</th><td>15 mg</td><td>1,000 mg from supplements</td></tr>
+              <tr><th scope="row">Vitamin A</th><td>900 mcg RAE / 700 mcg RAE</td><td>3,000 mcg of preformed vitamin A</td></tr>
+              <tr><th scope="row">Vitamin D</th><td>15 mcg (600 IU), ages 19–70</td><td>100 mcg (4,000 IU)</td></tr>
+              <tr><th scope="row">Vitamin B3 (niacin)</th><td>16 mg NE / 14 mg NE</td><td>35 mg from supplements</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note-small">Needs differ during pregnancy and breastfeeding and for teens and children. See the fact sheets in the sources list for every age group.</p>
+      </div>
+    </section>
+
+    <!-- Safety -->
+    <section id="safety" class="section" aria-labelledby="safety-title">
+      <div class="wrap safety-grid">
+        <div>
+          <h2 id="safety-title">Before you add a supplement</h2>
+          <ul class="checks">
+            <li><strong>Add up every source.</strong> A multivitamin plus a skin formula can double up on the same vitamins. Compare the totals with the upper limits.</li>
+            <li><strong>Pregnancy needs extra care.</strong> High-dose supplements of preformed vitamin A should be avoided by anyone who is or might be pregnant.</li>
+            <li><strong>Mention supplements to your doctor or pharmacist.</strong> Some vitamins interact with medicines, including acne and psoriasis medicines made from vitamin A.</li>
+            <li><strong>For topical products, patch test first.</strong> Try a small amount on your inner arm for 24 to 48 hours, add one new product at a time, and wear broad-spectrum sunscreen during the day.</li>
+            <li><strong>Stop and get help</strong> for burning that doesn’t ease, hives, blistering, or swelling of the face, lips or tongue.</li>
+          </ul>
+        </div>
+        <aside class="nubest-box" aria-labelledby="nb-title">
+          <h3 id="nb-title">Where NuBest fits</h3>
+          <p>Two products in NuBest’s skin brightening collection list vitamins from this guide: Women’s Multi lists vitamins A, C, D and E plus B vitamins, and NuBest White lists vitamins C and E alongside glutathione.</p>
+          <p><a href="https://www.nubest.com/collections/skin-brightening-supplement" target="_blank" rel="noopener">See the skin brightening collection</a></p>
+          <p class="small">For more on this topic, read NuBest’s article <a href="https://www.nubest.com/blogs/beauty-care/best-vitamins-for-skin" target="_blank" rel="noopener">Top 5 best vitamins for skin glow</a>.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Sources -->
+    <section class="section sources" aria-labelledby="sources-title">
+      <div class="wrap">
+        <h2 id="sources-title" class="h-small">Sources</h2>
+        <ol class="source-list">
+          <li>NIH Office of Dietary Supplements. <a href="https://ods.od.nih.gov/factsheets/VitaminC-Consumer/" target="_blank" rel="noopener">Vitamin C: Fact Sheet for Consumers</a>.</li>
+          <li>NIH Office of Dietary Supplements. <a href="https://ods.od.nih.gov/factsheets/VitaminE-Consumer/" target="_blank" rel="noopener">Vitamin E: Fact Sheet for Consumers</a>.</li>
+          <li>NIH Office of Dietary Supplements. <a href="https://ods.od.nih.gov/factsheets/VitaminA-Consumer/" target="_blank" rel="noopener">Vitamin A and Carotenoids: Fact Sheet for Consumers</a>.</li>
+          <li>NIH Office of Dietary Supplements. <a href="https://ods.od.nih.gov/factsheets/VitaminD-Consumer/" target="_blank" rel="noopener">Vitamin D: Fact Sheet for Consumers</a>.</li>
+          <li>NIH Office of Dietary Supplements. <a href="https://ods.od.nih.gov/factsheets/Niacin-Consumer/" target="_blank" rel="noopener">Niacin: Fact Sheet for Consumers</a>.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>This page is for general education and is not medical advice. Talk with a doctor, dermatologist or registered dietitian about your own needs. Statements about NuBest products have not been evaluated by the Food and Drug Administration; these products are not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.</p>
+      <p>Product information comes from nubest.com and is current only there. NuBest® is a trademark of NuBest, Inc. Last reviewed November 2026.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
