@@ -1,0 +1,183 @@
+/* ==========================================================
+   Skin Vitamins, Food First
+   Idea: a produce-market plate. Each vitamin owns one color,
+   used the same way everywhere so readers can track it.
+   ========================================================== */
+
+:root {
+  --bg: #ffffff;
+  --soft: #f3f5f2;
+  --ink: #1f2a33;
+  --text: #33404a;
+  --muted: #5e6b74;
+  --line: #dde3e0;
+
+  --c: #f2b705;    /* vitamin C, citrus */
+  --e: #5e9e45;    /* vitamin E, leaf */
+  --a: #ee7b30;    /* vitamin A, carrot */
+  --d: #3d8fd1;    /* vitamin D, sky */
+  --b3: #8e5bb5;   /* vitamin B3, berry */
+
+  --head: "Sora", "Segoe UI", system-ui, sans-serif;
+  --body: "Lora", Georgia, serif;
+
+  --f-1: 0.875rem;
+  --f0: 1.0625rem;
+  --f1: 1.25rem;
+  --f2: 1.6rem;
+  --f3: 2.25rem;
+  --f4: clamp(2.2rem, 5vw, 3.6rem);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12171b;
+    --soft: #1a2126;
+    --ink: #eef2f4;
+    --text: #d6dde1;
+    --muted: #9eabb3;
+    --line: #2c363d;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--body); font-size: var(--f0); line-height: 1.75; }
+
+h1, h2, h3 { font-family: var(--head); color: var(--ink); line-height: 1.15; margin: 0 0 0.5em; }
+h1 { font-size: var(--f4); font-weight: 800; letter-spacing: -0.02em; max-width: 22ch; }
+h2 { font-size: var(--f3); font-weight: 800; letter-spacing: -0.01em; }
+h3 { font-size: var(--f1); font-weight: 600; }
+.h-small { font-size: var(--f2); }
+
+p { margin: 0 0 1em; max-width: 68ch; }
+a { color: var(--d); text-underline-offset: 0.18em; }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--d); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { width: min(100% - 3rem, 68rem); margin-inline: auto; }
+
+.skip-link { position: absolute; left: -999px; top: 0.5rem; background: var(--ink); color: var(--bg); padding: 0.5rem 1rem; z-index: 20; }
+.skip-link:focus { left: 0.5rem; }
+
+/* Header */
+.bar { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); }
+.bar-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 1.5rem; padding-block: 0.8rem; }
+.site-name { font-family: var(--head); font-weight: 800; color: var(--ink); }
+.bar ul { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; list-style: none; margin: 0; padding: 0; }
+.bar nav a { font-family: var(--head); font-size: var(--f-1); color: var(--muted); text-decoration: none; }
+.bar nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2.5rem, 6vw, 4rem); }
+.lede { font-size: var(--f1); color: var(--muted); }
+.vit-strip { display: flex; gap: 0.6rem; list-style: none; padding: 0; margin: 2rem 0 0; }
+.vit-strip li {
+  width: 3.4rem; height: 3.4rem; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--head); font-weight: 800; color: #fff;
+}
+
+/* Vitamin color utilities */
+.v-c { background: var(--c); color: #3a2c00 !important; }
+.v-e { background: var(--e); }
+.v-a { background: var(--a); }
+.v-d { background: var(--d); }
+.v-b3 { background: var(--b3); }
+
+/* Sections */
+.section { padding-block: clamp(3rem, 7vw, 4.75rem); border-top: 1px solid var(--line); }
+.intro { color: var(--muted); }
+
+/* Plate builder */
+.plate-section { background: var(--soft); }
+.plate-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center; }
+.foods { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.foods button {
+  appearance: none; font: inherit; font-family: var(--head); font-size: var(--f-1); cursor: pointer;
+  padding: 0.45rem 0.9rem; border-radius: 999px; border: 1.5px solid var(--line);
+  background: var(--bg); color: var(--text);
+}
+.foods button:hover { border-color: var(--ink); }
+.foods button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.reset { margin-top: 1rem; appearance: none; background: none; border: 0; padding: 0; font: inherit; color: var(--muted); text-decoration: underline; cursor: pointer; }
+
+.plate-wrap { display: grid; justify-items: center; gap: 1rem; }
+.plate {
+  position: relative; width: min(100%, 20rem); aspect-ratio: 1; border-radius: 50%;
+  background: var(--bg); border: 10px solid var(--line);
+  box-shadow: inset 0 0 0 14px var(--soft);
+}
+.seg {
+  position: absolute; width: 4.2rem; height: 4.2rem; border-radius: 50%;
+  display: grid; place-items: center; font-family: var(--head); font-weight: 800;
+  color: var(--muted); background: var(--soft); border: 2px dashed var(--line);
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+/* five positions around the plate */
+.seg-c  { top: 12%; left: 50%; transform: translateX(-50%); }
+.seg-e  { top: 38%; right: 10%; }
+.seg-a  { bottom: 12%; right: 22%; }
+.seg-d  { bottom: 12%; left: 22%; }
+.seg-b3 { top: 38%; left: 10%; }
+.seg.on { border-style: solid; border-color: transparent; color: #fff; }
+.seg-c.on { background: var(--c); color: #3a2c00; }
+.seg-e.on { background: var(--e); }
+.seg-a.on { background: var(--a); }
+.seg-d.on { background: var(--d); }
+.seg-b3.on { background: var(--b3); }
+.plate-status { font-family: var(--head); font-weight: 600; color: var(--ink); text-align: center; margin: 0; }
+
+/* Vitamin list */
+.vit-list { display: grid; gap: 0; margin-top: 1.5rem; }
+.vit { padding: 1.4rem 0 1.2rem 1.25rem; border-left: 6px solid; border-bottom: 1px solid var(--line); }
+.v-c-border { border-left-color: var(--c); }
+.v-e-border { border-left-color: var(--e); }
+.v-a-border { border-left-color: var(--a); }
+.v-d-border { border-left-color: var(--d); }
+.v-b3-border { border-left-color: var(--b3); }
+.dot { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 50%; margin-right: 0.55rem; vertical-align: 0.1em; }
+.foods-line { color: var(--muted); font-size: var(--f-1); margin: 0; }
+.foods-line strong { color: var(--ink); font-family: var(--head); font-weight: 600; }
+
+/* Table */
+.amounts { background: var(--soft); }
+.table-wrap { overflow-x: auto; margin-top: 1rem; }
+table { width: 100%; border-collapse: collapse; min-width: 34rem; background: var(--bg); }
+th, td { text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-family: var(--head); font-size: var(--f-1); color: var(--muted); font-weight: 600; border-bottom: 2px solid var(--ink); }
+tbody th { font-family: var(--head); font-weight: 600; color: var(--ink); }
+.note-small { font-size: var(--f-1); color: var(--muted); margin-top: 1rem; }
+
+/* Safety */
+.safety-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
+.checks { margin: 0; padding: 0; list-style: none; }
+.checks li { padding: 0.9rem 0; border-top: 1px solid var(--line); }
+.checks strong { font-family: var(--head); font-weight: 600; color: var(--ink); }
+.nubest-box { background: var(--soft); border-radius: 14px; padding: 1.5rem; border-top: 6px solid var(--e); }
+.nubest-box h3 { font-size: var(--f1); }
+.small { font-size: var(--f-1); color: var(--muted); }
+
+/* Sources */
+.source-list { padding-left: 1.25rem; font-size: var(--f-1); }
+.source-list li { margin-bottom: 0.4rem; }
+
+/* Footer */
+.foot { border-top: 1px solid var(--line); padding-block: 2.5rem; font-size: var(--f-1); color: var(--muted); }
+.foot p { max-width: 85ch; }
+
+/* Responsive */
+@media (max-width: 880px) {
+  .plate-grid, .safety-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .wrap { width: min(100% - 2rem, 68rem); }
+  .seg { width: 3.4rem; height: 3.4rem; }
+  .vit-strip li { width: 2.8rem; height: 2.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .seg { transition: none; }
+}
